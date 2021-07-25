@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/11bc14be8e.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Rannlab</title>
+  </head>
+  <body>
+
+    <div class="container bg-danger mt-5">
+            <nav class="navbar text-white">
+                <h2 style="padding-left:25%">Movies</h2>
+                <form class="d-flex active">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <div class="search-box">
+                        <input id="myInput" type="text" placeholder="Search..">
+                     </div>
+                </form>
+            </nav>
+    </div>
+    <div class="container">
+        
+          <table class="table table-hover">
+           
+            <tbody id="myTable">
+              <tr data-href="P1.html">
+                <td><img src="images\P1.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>Lucifer <br><small class="text-muted">2020-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P3.html">
+                <td><img src="images\P2.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>Cinderella <br><small class="text-muted">2020-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P2.html">
+                <td><img src="images\P3.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>Without Remose <br><small class="text-muted">2016-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P1.html">
+                <td><img src="images\P4.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td> A Perfect Fit <br><small class="text-muted">2017-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P3.html">
+                <td><img src="images\P5.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>Loki<br><small class="text-muted">2018-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P2.html">
+                <td><img src="images\P6.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>The Tomarrow War <br><small class="text-muted">2019-08-05</small></td>
+                <td></td>
+              </tr>
+
+              <tr data-href="P1.html">
+                <td><img src="images\P7.jpg" class="profile-img rounded-circle" alt=""></td>
+                <td>Fear Street<br><small class="text-muted">2021-08-05</small></td>
+                <td></td>
+              </tr>
+              
+            </tbody>
+          </table>
+       
+
+    </div>
+
+
+
+
+    <script>
+        $(document).ready(function(){
+
+            //for Search Icon 
+            $(".fa-search").click(function() {
+		       $(".search-box").toggle();
+		       $("input[type='text']").focus();
+		     });
+ 
+
+            $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+ 
+  // for click on table row
+
+
+            $(document.body).on("click", "tr[data-href]",function(){
+                window.location.href=this.dataset.href;
+            });
+        });
+    </script>
+
+    
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
